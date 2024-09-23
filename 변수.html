@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수</title>
+</head>
+<body>
+  <script>
+    //엄격모드
+    "use strict"
+    //변수선언 하나의 값을 저장하기 위한 수단이다.
+    var userId = 1;
+    var userName = "Lee";
+    console.log(userId,userName);
+    //console에 출력함 (변수를 참조, 출력) = 값이 출력
+
+    userName = "kim";//userName 변수에 "kim"을 재할당
+    console.log(userName);
+
+    var score;
+    console.log(score); //undefined
+    //변수 선언 -> 할당값 초기화
+
+    score = 80; //값을 할당
+    console.log(score);
+
+    for(i=0; i < 5; ++i) //i가 5보다 작을 때 1씩 증가한다
+    console.log(i);
+   </script>
+</body>
+</html>
