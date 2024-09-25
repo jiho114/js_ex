@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문</title>
+</head>
+<body>
+  <script>
+    //for(var, let, ... 변수=0 초기값 ; 변수 지정 ; ++, --) : 반복문 true면 반복 실행
+    //펄스가 됐을 때 반복 중단
+  //  for(let i=0; i < 10; ++i)
+   // console.log(i)
+  // let s = "hello world"
+  // for(let i=0; i < s.length; ++i){ //s=hello world 0~시작 i를0으로 지정
+    // console.log(s[i]); //0번째 순서인 s = hello world 
+  // }
+
+  // for(let i=0; i < 10; ++i){
+    // if(i%2 === 0){console.log(i)} //if 조건문
+  // }
+
+  // for(let i=0; i < 10; ++i){
+    // if(i%2 === 0){
+     //  console.log(i)
+    // }
+  // }
+
+
+  let str = "";
+  for(let i = 0; i < 10; i++){
+    if(i%2 === 0){
+      str += i; //str변수에 i를 더해서 str변수에 할당
+      console.log(str)
+    }
+  }
+
+  for(let i=9; i >= 0; i--){
+    if(i%2) console.log(i)
+  }
+
+
+  </script>
+</body>
+</html>

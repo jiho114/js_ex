@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>break, continue</title>
+</head>
+<body>
+  <script>
+    let i = 0;
+    for(;;){ // 무한루프
+      ++i //i를 1씩 증가
+      if(i%2 == 1) continue;//i를 2로 나눈값이 1이면 실행하지 않는다
+
+      console.log(i);
+      if(i >= 20) break; //반복문을 종료
+    }
+
+    
+  </script>
+</body>
+</html>
