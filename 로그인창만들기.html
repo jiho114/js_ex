@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인창만들기</title>
+</head>
+<body>
+  <script>
+    let log = prompt("비밀번호를 입력하세요.", "")
+    if(log == "admin"){
+      let pw = prompt('비밀번호 : ',"")
+      if(pw == "greenart"){
+        alert("환영합니다.");}
+        else if(pw == "" || pw == null){
+           alert("비밀번호를 입력해주세요.")}
+        }else{
+        alert("인증에 실패하였습니다.")}
+     </script>
+</body>
+</html>
