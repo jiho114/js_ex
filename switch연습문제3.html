@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch연습문제3</title>
+</head>
+<body>
+  <script>
+    //val = Number(val)
+   let grades = prompt("시험 점수 입력");
+   switch(true){
+    case (grades >= 90) : document.write("A학점")
+    break;
+    case (grades >= 80): document.write("B학점")
+    break;
+    case (grades >= 70): document.write("C학점")
+    break;
+    default : alert("숫자로만 입력하세요.")
+    console.log(isNaN(grades))
+   }
+  </script>
+</body>
+</html>

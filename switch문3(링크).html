@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포털사이트 이동</title>
+</head>
+<body>
+  <script>
+    var site = prompt("네이버, 다음, 구글, 네이트 사이트를 검색하세요", "");
+    var url; //링크주소 담을 변수
+
+    switch(site){
+      case "구글" : url = "https://www.google.com";
+      break;
+      case "네이버" : url = "https://www.naver.com";
+      break;
+      case "다음" : url = "https://www.daum.net";
+      break;
+      case "네이트" : url = "https://www.nate.com";
+      break;
+      default : alert("올바른 사이트 이름을 입력하세요.")
+      location.reload() //새로고침
+    } document.write("url")
+//언디파인드.널 펄스 0 펄스
+//1 정수 문자 트루
+//변수에 담겨있는 주소로 이동
+    if(url) location.href = url;
+  </script>
+</body>
+</html>

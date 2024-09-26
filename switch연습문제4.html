@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch연습문제4</title>
+</head>
+<body>
+  <script>
+    var link = prompt("네이버, 구글 중에서 입력하세요.", "")
+    var url
+
+    switch(link){
+      case "네이버" : url = "https://www.naver.com";
+      break;
+      case "구글" : url = "https://www.google.com";
+      break;
+      default : alert("네이버, 구글 단어만 검색하세요.")
+    }document.write(url)
+    if(url) location.href = url;
+  </script>
+</body>
+</html>

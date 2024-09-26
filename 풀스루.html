@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>풀스루</title>
+</head>
+<body>
+  <script>
+    var year = 2000; //2000년 운년으로 2월 29일
+    var month = 2;
+    var day = 0;
+
+    switch(month){
+      //1 3 5 7 8 10 12 월 31일
+      case 1: case 3: case 5: case 7: case 8:
+      case 10: case 12:
+        day = 31;
+        break;
+        case 4: case 6: case 9: case 11:
+          day = 30;
+          break;
+          case 2: //4로 나눠서 0으로 떨어짐 / 100으로 나눠서 !not 떨어지지 않음
+            day = ((year%4 === 0 && year % 100 !== 0) || (year%400 === 0)) ? 29 : 28
+            default: console.log("Invalid month")
+    }
+    document.write(day)
+
+  </script>
+</body>
+</html>

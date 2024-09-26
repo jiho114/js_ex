@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch연습문제2</title>
+</head>
+<body>
+  <script>
+    var fruit = prompt("알파벳 a,b,c를 입력하세요", "")
+    switch(fruit){
+      case "a" : case "A" : document.write("apple")
+      break;
+      case "b" : case "B" : document.write("banana")
+      break;
+      case "c" : case "C" : document.write("cacao")
+      break;
+      default : alert("올바른 단어를 입력하세요.")
+      location.reload();
+    }
+  </script>
+</body>
+</html>

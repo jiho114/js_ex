@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인기능구현</title>
+</head>
+<body>
+  <script>
+    //id와 pw를 지정
+    var id = "jiho0418"
+    var pw = "a123456789"
+
+    var userId = prompt("아이디를 입력하세요.", "")
+    if(id === userId){//입력한 아이디와 저장된 아이디가 일치하면
+      var userPw = prompt("비밀번호는?", "") //사용자한테 입력받을 비밀번호
+      if(pw === userPw){
+        document.write(userId + "님 반갑습니다.")
+      }else{
+        alert("비밀번호를 확인하세요")
+        location.reload();
+      }
+    }else{
+      alert("아이디를 확인하세요.")
+      location.reload();
+    }
+  </script>
+</body>
+</html>

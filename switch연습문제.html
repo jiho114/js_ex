@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch연습문제</title>
+</head>
+<body>
+  <script>
+    let x = prompt("성인, 미성년자, 노인 중 입력하세요.", "")
+    switch(x){
+      case "성인" :
+        document.write(1000) 
+      break;
+      case "미성년자" :
+        document.write(500) 
+      break;
+      case "노인" :
+        document.write("무료") 
+      break;
+      default : alert("성인, 미성년자, 노인만 입력하세요.")
+      location.reload()
+    }
+  </script>
+</body>
+</html>
