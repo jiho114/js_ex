@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아코디언</title>
+  <style>
+    .accordion{
+      background-color: #eee;
+      color: #444;
+      padding:18px;
+      cursor: pointer;
+      width:100%;
+      text-align: left;
+      border: 0;
+      transition:all 0.4s;
+    }
+
+    .active,
+    .accordion:hover{
+      background-color: #ccc;
+    }
+
+    .accordion::after{
+      content:'\02795';
+      font-size: 13px;
+      color: #777;
+      float:right;
+    }
+
+    .active::after{
+      content:'\2796';
+    }
+
+    .panel{
+      padding:18px;
+      background-color: #fff;
+      max-height:0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <button class="accordion">Section 1</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum sapiente itaque inventore sed explicabo fuga
+      facilis veniam asperiores iusto provident. Obcaecati quia sed dolor nemo consequatur excepturi itaque id sint.</p>
+  </div>
+  <button class="accordion">Section 2</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum sapiente itaque inventore sed explicabo fuga
+      facilis veniam asperiores iusto provident. Obcaecati quia sed dolor nemo consequatur excepturi itaque id sint.</p>
+  </div>
+  <button class="accordion">Section 3</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum sapiente itaque inventore sed explicabo fuga
+      facilis veniam asperiores iusto provident. Obcaecati quia sed dolor nemo consequatur excepturi itaque id sint.</p>
+      
+    <script>
+      const acc = document.getElementsByClassName("accordion");
+      // console.log(acc)
+      for(let ac of acc){
+        ac.addEventListener("click", ()=>{
+          ac.classList.toggle("active")//클릭한 버튼에 active클래스를 추가 또는 제거
+          const panel = ac.nextElementSibling; // 클릭한 버튼의 다음 형제 요소인 panel를 선택
+          if(panel.style.maxHeight){
+            panel.style.maxHeight = null;
+          }else{
+            panel.style.maxHeight = "block"
+            console.log(panel.scrollHeight) //스크롤 하이트는 해당 요소에서 안보이는 영역의 높이를 구해줌
+            //Element.scrollHeight는 읽기 전용 속성으로 요소 컨텐츠의 총 높이를 나타내며, 바깥으로 넘쳐서 보이지 않는 콘텐츠도 포함됩니다.
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        })
+      }
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lazy</title>
+</head>
+<body>
+  <script>
+    // || 연산자
+    let a = 3, b = 0;
+    console.log(a || b)
+    console.log(b || a)
+
+    //&& 연산자
+    // 앞에 트루면 뒤에것 실행
+  
+    let c = 3, d = 0;
+    console.log(c && d)
+    console.log(d && c)
+
+    //{}객체를 의미
+    let person1 = {name : "홍길동"}, person2 = null;
+    console.log(person1.name && person2)
+    console.log(person2 && person1.name)
+
+    //
+    let s = "123.456번"; 
+    let f = parseInt(s); // 소수점, 글자 x
+    console.log(f);
+    
+    let y = parseFloat(s) // 소수점 o, 글자 x
+    console.log(y)
+
+    let p = Number(s)
+    console.log(p) //문자는 숫자로 변환 x Nan 뜸
+
+     //반올림
+     console.log(Math.round(10/3))
+     console.log(Math.round(10/4))
+     //내림, 올림
+     console.log(Math.floor(10.111111))
+     console.log(Math.ceil(10.111111))
+     //거듭제곱
+     console.log(Math.pow(2, 3))
+     //절대값 abs
+     console.log(Math.abs(-3))
+     //삼각함수 sin , cos , tan
+     //최대,최소 메소드 max, min
+     //난수 메소드 랜덤 문자 생성
+     console.log(Math.ceil(Math.random()*6+1)) //0-1사이의 실수를 생성
+  </script>
+</body>
+</html>
+
+
+
+

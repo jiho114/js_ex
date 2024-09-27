@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>형변환 연습문제</title>
+</head>
+
+<body>
+  <script>
+    let memberCount = 31;
+    let pageSize = 10;
+    //페이지수를 계산
+    let pageCount = Math.ceil(memberCount / pageSize);
+    document.write(pageCount)
+
+
+
+    //특정범위 내의 난수를 생성하는 방식
+
+    const MAX = 20, MIN = 10
+    for (let i = 0; i < 30; i++) {
+      let num = Math.floor(Math.random() * (MAX - MIN + 1) + MIN);
+      document.write(num)
+    }
+
+    // 0 - 5 사이의 숫자를 지정
+
+    var randomNum = Math.floor(Math.random() * 6);
+    //시도횟수
+    var trial = 0;
+    //find 값이 false일 경우에 실행
+    var find = false;
+    while (find == false) { // 입력받은 값을 아래 변수에 할당
+      var predictNum = prompt("0~5사이의 숫자를 예측하시오");
+      trial++; //입력시도횟수를 1 증가시킴
+      if (predictNum == randomNum) { // 입력 숫자와 랜덤 생성 숫자가 일치하면 실행
+        // 콘솔 출력
+        console.log("임의의 숫자는 " + predictNum + "입니다.");
+        //find변수를 true로 변경하여 반복문 종료
+        find = true;
+      } // 입력한 값이 생성한 숫자보다 크면
+      else if (predictNum > randomNum) {
+        console.log("예측값이 임의의 숫자보다 큽니다.");
+      }
+      else {
+        console.log("예측값이 임의의 숫자보다 작습니다.");
+      }
+    }
+    console.log(trial + "번 만에 임의의 숫자를 찾았습니다."); 
+  </script>
+</body>
+
+</html>
+

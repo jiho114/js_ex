@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 랜덤 변경</title>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <img src="img/p1.jpg" alt="">
+  <img src="img/p2.jpg" alt="">
+  <img src="img/p3.jpg" alt="">
+  
+  <script>
+    const imgs = document.querySelectorAll("img");
+    console.log(imgs)
+    
+    //for(let i = 0; i < imgs.length; i++){
+      //이미지스의 인덱스를 불러오고 클릭 이벤트를 추가
+     // imgs[i].addEventListener("click", ()=>{
+        //1에서 20사이의 정수를 구함
+       // let n = Math.ceil(Math.random() * 20);
+        //클릭한 이미지 요소의 src속성값을 생성한 숫자를 적용해서 변경
+        //imgs[i].src = "img/p" + n + ".jpg"
+        //이미지 폴더 안에 이미지 경로를 n으로 생성한 숫자로 불러옴 
+        //console.log()
+      //});
+    //}
+
+    // es6 for of문
+    for(let img of imgs){
+      img.addEventListener("click", ()=>{
+        let n = Math.ceil(Math.random() * 20);
+        img.src = `img/p${n}.jpg`;
+      })
+    }
+  </script>
+</body>
+</html>
