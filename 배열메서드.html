@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열메서드</title>
+</head>
+
+<body>
+  <script>
+    let a1 = [1, 2, 3];
+    let a2 = ["a", "b", "c"];
+    //배열을 문자열로 반환
+    console.log(a1.toString()); //1, 2, 3
+    console.log(a2.toString()); //a, b, c
+
+    console.log("============================="); //a, b, c
+    
+    let a = [0,1,2];
+    a.splice(1,0,"a");
+    console.log(a);
+console.log("=========")
+    let t = [0, 1, 2];
+a.splice(1, 0, "a", "b");
+console.log(t); //[ 0, 'a', 'b', 1, 2 ]
+ 
+  </script>
+</body>
+</html>
