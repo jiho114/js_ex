@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const tempString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    //7의 배수인 순번의 글자를 *로 표시
+    for(let i=0; i<tempString.length; i++){
+      if(i%7 !== 0 || i === 0){ // i 가 7의 배수가 아니면 문자를 출력
+        //7의 배수가 아니거나 i 가 아니면 문자를 출력
+      document.write(tempString[i]);
+      }else{
+      document.write("*");
+      }
+    } 
+  </script>
+</body>
+</html>

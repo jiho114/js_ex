@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+</head>
+<body>
+  <script>
+    function test1(f){ //test1호출되면 매개변수 f에 add or multiply 함수가 전달
+      let result = f (3, 4); // add or multiply 함수가 호출되고 리턴값이 result에 대입된다
+      console.log(result)
+    }
+
+    function add(a, b){
+      return a + b;
+    }
+
+    function multiply(a, b){
+      return a * b;
+    }
+
+    test1(add);
+    
+    test1(multiply);
+  </script>
+</body>
+</html>
