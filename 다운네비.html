@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다운네비</title>
+  <style>
+    *{margin: 0; padding: 0;} ul, li{list-style: none;} a{text-decoration: none; color: inherit;}
+
+    section{
+      height:500px;
+      background-color: lightpink;
+      border:1px solid salmon;
+    }
+
+    .gnb{
+      width:800px;
+      margin:0 auto;
+      display: flex;
+      text-align: center;
+    }
+
+    .gnb>li{
+      width:25%;
+      position: relative;
+    }
+
+    .gnb>li>a{
+      display: block;
+      padding:10px 0;
+    }
+
+    .gnb>li:hover>a{
+      background-color: tan;
+    }
+
+    .sub>li>a{
+      display: block;
+      padding:10px 0;
+    }
+
+    .sub>li:hover>a{
+      background-color: sandybrown;
+      color: white;
+
+    }
+
+    .sub{
+      width:100%;
+      background-color: white;
+      max-height:0;
+      transition:max-height .5s;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="gnb">
+      <li>
+        <a href="#">menu</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu</a>
+        <ul class="sub">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <section></section>
+  <script>
+    const gnbLi = document.querySelectorAll(".gnb>li")
+    for(const item of gnbLi){
+      item.addEventListener("mouseenter", ()=>{
+        item.lastElementChild.style.maxHeight = item.lastElementChild.scrollHeight+"px";
+      })
+      item.addEventListener("mouseleave",()=>{
+        item.lastElementChild.style.maxHeight = "0px"
+      })
+    }
+  </script>
+</body>
+</html>

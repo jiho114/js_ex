@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+#m1{ width:100px; height:100px; position:absolute; top:50px; left:30px }
+#m2{ width:100px; height:100px; position:absolute; top:300px; right:30px }
+#m3{ width:100px; height:100px; position:absolute; bottom:80px; left:150px }
+#cursor{
+	width:100px; height:100px; 
+  cursor:url(img/111.png), auto;
+  position:absolute; top:0; left:0;
+}
+
+</style>
+
+</head>
+<body>
+	<div id="m1"><img src="img/1.png" /></div>
+	<div id="m2"><img src="img/2.png" /></div>
+	<div id="m3"><img src="img/3.png" /></div>
+	<div id="cursor"></div>
+
+  <script>
+    window.addEventListener("mousemove", (e)=>{
+      const x = e.clientX;
+      const y = e.clientY;
+      const m1 = document.querySelector("#m1")
+      m1.style.top = y+"px"
+      m1.style.left = x+"px"
+    }) //${} x/y값을 절반으로 나눠서 범위를 제한시킴
+
+    const cursor = document.querySelector("#cursor");
+    cursor.style.transporm = "translate(${x}px, ${y}px)"
+
+    const m2 = document.querySelector("#m2")
+    m2.style.transporm = 'translateY(${y/5}px)';
+    const m3 = document.querySelector("#m3")
+    m2.style.transporm = 'translateY(${y/5}px)';
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자</title>
+</head>
+<body>
+  <h1>아이디가 lastEl인 요소를 선택 하세요</h1>
+  <ul>
+  <li id="firstEl">첫 번째 아이템이에요!</li>
+  <li id="secondEl">두 번째 아이템이에요!</li>
+  <li class="items">세 번째 아이템이에요!</li>
+  <li class="items">네 번째 아이템이에요!</li>
+  <li id="lastEl">다섯 번째 아이템이에요!</li>
+</ul>
+  <script>
+    let a = document.getElementById("lastEl")
+    console.log(a.innerText)
+    let b = document.getElementsByClassName("items")
+    console.log(b)
+    let c = document.getElementsByTagName("li")
+    console.log(c)
+  </script>
+</body>
+</html>
+
