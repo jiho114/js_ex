@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex</title>
+  <style>
+    input{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" value="아이디">
+  <input type="text" value="비밀번호">
+  <button class="btn">로그인창</button>
+
+  <script>
+    const btn = document.querySelector("button")
+    const input = document.querySelectorAll("input")
+    // console.log()
+    btn.addEventListener("click", e => {
+      input.forEach(ip => {
+        ip.style.display = "block"
+      })
+    })
+
+    
+  </script>
+</body>
+</html>

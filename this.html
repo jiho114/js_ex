@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>This</title>
+</head>
+<body>
+  <button class="btn1">0</button>
+  <button class="btn2">0</button>
+  <button class="btn3">↑</button>
+  <button class="btn4">↓</button>
+
+  <script>
+    const $button1 = document.querySelector(".btn1")
+    const $button2 = document.querySelector(".btn2")
+    const $button3 = document.querySelector(".btn3")
+    const $button4 = document.querySelector(".btn4")
+
+    //이벤트 핸들러 방식
+    //일반함수 내에서의 this는 함수가 바라보는 바인딩된 dom요소
+    $button3.onclick = function (e) {
+      //this 이벤트를 바인딩한 dom요소를 가리킨다.
+      // console.log(this)
+      //이벤트를 발생한 e.currnttarget과 동일
+      // console.log(e.currentTarget) //$button1 이벤트가 발생된 요소
+      //$button1의 textContent를 1 증가
+      ++$button1.textContent;
+    }
+    
+    $button4.addEventListener("click",()=>{
+      --$button1.textContent;
+    })
+
+    //addEventLisner 메서드
+    $button2.addEventListener("click",e => {
+      //화살표 함수 내에서 this는 상위 스코프 상위(하위) 상위 객체를 뜻함
+      //여기서는 window
+      //this window를 가리키므로 window.textContent에 NaN을 할당된다.
+      ++e.currentTarget.textContent;
+      // console.log(e.currentTarget)
+    })
+  </script>
+</body>
+</html>
