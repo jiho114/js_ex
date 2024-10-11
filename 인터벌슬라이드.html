@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>sample5</title>
+  <style>
+    .bigbox {
+      width: 400px;
+      height: 300px;
+      margin-top: 100px;
+      margin-left: 100px;
+      overflow: hidden;
+    }
+
+    .box {
+      position: relative;
+      width: 1200px;
+      height: 300px;
+    }
+
+    .box img {
+      position: absolute;
+      transition: all .3s
+    }
+
+    .box .leftPlus400 {
+      left: 400px;
+      transition: none;
+    }
+
+    .box .left0 {
+      left: 0px;
+    }
+
+    .box .leftMinus400 {
+      left: -400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bigbox">
+    <div class="box">
+      <img alt="이미지1" src="img/인터벌슬라이드/img1.jpg" class="left0" />
+      <img alt="이미지2" src="img/인터벌슬라이드/img2.jpg" class="leftPlus400" />
+      <img alt="이미지3" src="img/인터벌슬라이드/img3.jpg" class="leftPlus400" />
+      <img alt="이미지4" src="img/인터벌슬라이드/img4.jpg" class="leftPlus400" />
+    </div>
+  </div>
+
+<script>
+let i = 0; //이미지의 순번을 담을 변수
+//이미지요소선택
+const boxImgs = document.querySelectorAll('.box>img')  
+function slide(){
+  //단축표현
+  (i === boxImgs.length) && (i = 0)
+  boxImgs[i].className = 'leftMinus400';
+  boxImgs[(i+1) % boxImgs.length].className = 'left0';
+  //오른쪽 밖에서 > 왼쪽 안으로 이동
+  // 다다음이미지는 오른쪽 밖으로 이동
+  boxImgs[(i+2) % boxImgs.length].className = 'leftPlus400';
+  i++;
+}
+
+setInterval(slide, 3000);
+</script>
+
+</body>
+
+</html>

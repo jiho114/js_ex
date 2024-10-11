@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    body {
+      background-color: #333;
+    }
+
+    img {
+      border: 0px;
+    }
+
+    #wrap {
+      width: 640px;
+      margin: 100px auto 0 auto;
+    }
+
+    #nav li {
+      float: left;
+    }
+
+    #nav li a {
+      display: block;
+      border: 2px solid #bbb;
+      margin: 0 6px 10px 0;
+      border-radius: 5px;
+    }
+
+    #nav li a img {
+      width: 70px;
+    }
+
+    #window {
+      clear: both;
+    }
+
+    #nav li a.active {
+      border: 2px solid #fff;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <ul id="nav">
+      <li><a href="img/gallery/lop0.jpg" class="active"><img src="img/gallery/thumb0.jpg" /></a></li>
+      <li><a href="img/gallery/lop1.jpg"><img src="img/gallery/thumb1.jpg" /></a></li>
+      <li><a href="img/gallery/lop2.jpg"><img src="img/gallery/thumb2.jpg" /></a></li>
+      <li><a href="img/gallery/lop3.jpg"><img src="img/gallery/thumb3.jpg" /></a></li>
+      <li><a href="img/gallery/lop4.jpg"><img src="img/gallery/thumb4.jpg" /></a></li>
+      <li><a href="img/gallery/lop5.jpg"><img src="img/gallery/thumb5.jpg" /></a></li>
+      <li><a href="img/gallery/lop6.jpg"><img src="img/gallery/thumb6.jpg" /></a></li>
+      <li><a href="img/gallery/lop7.jpg"><img src="img/gallery/thumb7.jpg" /></a></li>
+    </ul>
+    <div id="window"><img src="img/gallery/lop0.jpg" /></div>
+  </div>
+
+  <script>
+    const navLi = document.querySelectorAll('#nav li a');
+    navLi.forEach(item => item.addEventListener("click", (e) => {
+      e.preventDefault();
+      const imgUrl = item.getAttribute('href');
+
+      document.querySelector('#window img').setAttribute('src', imgUrl);
+      for(const item of navLi){
+        item.classList.remove('active');
+      }
+      item.classList.add('active');
+    }))
+
+  </script>
+</body>
+
+</html>

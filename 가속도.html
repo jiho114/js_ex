@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>animate</title>
+	<style>
+		.box1 {
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box box1">
+		상자1
+	</div>
+  
+  <script>
+    const box1 = document.querySelector('.box')
+    let i = -90;//애니메이션의 진행상태를 나타내는 변수
+
+    function ani(){
+      //i값을 사인함수에 넣어 계산 값은 0에서 1사이의 범위를 가짐
+      const ease = ((Math.sin(i*Math.PI / 180))+1 /2);
+      
+      box1.style.left = `${0 + (500 * ease)}px`; // 0에서 500사이로 이동
+      i += 180/60; // i값을 매 프레임마다 증가시킵니다(1초에 60번)
+      if(i >= 90){
+        i = 90;
+        return clearInterval(id);
+      }
+    }
+    const id = setInterval(ani, 1000/60)
+  </script>
+</body>
+
+</html>
