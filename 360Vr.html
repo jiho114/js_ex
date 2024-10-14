@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>360VR</title>
+  <style>
+    #slider{
+      width:500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="slideList"></div>
+  <input type="range" id="slider" max="100" min="0" value="0">
+
+  <script>
+    for(i = 0; i < 120; i++){
+      const p = document.createElement('p');
+      const img = document.createElement('img');
+      //이미지의 src속성으로 이미지 주소를 설정
+      img.setAttribute('src',`img/360VR/picanto_Green_${i}.jpg`)
+      img.setAttribute('art', `img${i}`)
+      //img를 p요소의 자식 요소로 넣어주고 p 요소를 #sliderList 자식 요소로 추가
+      
+      p.appendChild(img);
+      document.querySelector('#slideList').appendChild(p);
+    }
+
+    const imageList  = document.querySelectorAll('#slideList > p');
+    //슬라이더
+    const slider = document.querySelector('#slider')
+    //초기 이미지 표시
+    imageList.forEach((img, idx) => {
+      img.style.display = 'none';
+    })
+    imageList[0].style.display = 'block'
+    //슬라이드 시퀀스의 시작과 끝 인덱스를 설정
+    let start = 0;
+    let end = imageList.length-1; //마지막 인덱스 번호 119 0-119
+    //슬라이더 이벤트 리스너추가
+    slider.addEventListener('input',()=>{
+      let sliderValue = slider.value;
+      let imgIndex = Math.round((sliderValue / 100) * end);
+      // console.log(imgIndex)
+      imageList.forEach(img =>{
+        img.style.display = 'none';
+        imageList[imgIndex].style.display = 'block'
+      })
+    })
+  </script>
+</body>
+</html>
+

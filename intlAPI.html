@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API</title>
+</head>
+<body>
+  <script>
+    //숫자를 간결하게 나타내기
+    const views = 1234567;
+    //NumberFormat() 첫번째 인수로 언어선택 (ko , en )
+    const formatter = new Intl.NumberFormat("ko-KR",{
+      notation:"compact",
+      compactDisplay:'long'
+      currency: "KRW"
+    });
+    document.write(formatter.format(views)+ "<br>")
+  </script>
+</body>
+</html>

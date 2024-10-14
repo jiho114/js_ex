@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #myList > li{
+    padding: 5px;
+}
+#myList > li:hover{
+    cursor: pointer;
+    color: #ddd;
+    background-color: lightcoral;
+}
+
+button{
+    color: #333;
+    padding: .5em 1em;
+    text-align: center;
+    font-size: 1em;
+    border: none;
+    background-color: lightblue;
+    box-shadow: 2px 2px 2px #888;
+}
+button:hover{
+    cursor: pointer;
+    color: #fff;
+    box-shadow: -2px -2px 2px #888;
+}
+  </style>
+</head>
+<body>
+  <ol id="myList">
+      <li>window.open() 기본형</li>
+      <li>화면 이동</li>
+      <li>팝업창 열기</li>
+      <li>팝업창 제어</li>
+      <li>
+          <a href="http://www.naver.com" target="_blank">네이버</a>
+      </li>
+  </ol>
+
+  <button type="button">윈도우 열기</button>
+  <button type="button">윈도우 닫기</button>
+
+  <script>
+    const list = document.querySelectorAll('#myList>li');
+    // window.open(URL, name, specs, replace)
+    list[0].onclick = function(){
+      window.open();
+    }
+    list[1].addEventListener('click', ()=>{
+      window.open('https://www.google.co.kr', '_self')
+    })
+
+    //팝업창
+    list[2].addEventListener('click', ()=>{
+      window.open('https://www.naver.com', '', 'width=400, height=400')
+    })
+
+    list[3].addEventListener('click', ()=>{
+      let win = window.open('', '', 'width=400, height=400')
+      win.document.write('<h1>새창입니다</h1>')
+      //opner 부모창
+      win.opener.document.write('<h1>부모창입니다</h1>')
+    })
+
+    let win
+    const btn = document.querySelectorAll('button')
+    btn[0].addEventListener('click', ()=>{
+      win = window.open('', '', 'width=200, height=200');
+      win.document.write('팝업창')
+      // console.log(btn)
+    })
+
+
+    btn[1].addEventListener('click', ()=>{
+      if(win != undefined){
+        win.close();
+      }
+    })
+  </script>
+</body>
+</html>

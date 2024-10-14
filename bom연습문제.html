@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>연습문제</title>
+  <style>
+    fieldset {
+      margin: 10px;
+    }
+
+    legend {
+      padding: 5px;
+      background-color: lightblue;
+    }
+
+    input[type="text"] {
+      box-sizing: border-box;
+      padding: 5px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <fieldset>
+
+    <legend>alert()</legend>
+    <input id="firstInput" type="text" name="alert" value="클릭하세요">
+
+  </fieldset>
+
+  <fieldset>
+
+    <legend>confirm()</legend>
+    <button id = "confirmBtn"type="button">confirm()</button>
+
+    <hr>
+
+    <input type="text" name="confirm" readonly="readonly">
+
+  </fieldset>
+
+  <fieldset>
+
+    <legend>prompt()</legend>
+
+    <input type="button" value="prompt()">
+
+    <hr>
+
+    <input type="text" name="prompt" disabled="disabled">
+
+  </fieldset>
+
+  <script>
+  let firstInput = document.querySelector('#firstInput')
+  firstInput.addEventListener('click', ()=>{
+    alert(firstInput.value);
+  })
+
+  let confirmBtn = document.querySelector('#confirmBtn')
+  let confirmInput = document.querySelector('input[name=confirm]')
+  confirmBtn.addEventListener('click',()=>{
+    
+  })
+  
+  </script>
+</body>
+
+</html>
