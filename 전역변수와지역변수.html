@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전역변수와 지역변수</title>
+</head>
+<body>
+  <script>
+    let MYAPP = {}; //전역 네임 스페이스 객체
+    MYAPP.name = 'Lee'
+    //네임 스페이스 객체에 또다른 네임 스페이스 객체를 프로퍼티로 추가해서 네임 스페이스를 계층적으로 구성할 수 있다
+    MYAPP.person = {
+      name : 'Lee',
+      address : 'Seoul'
+    }
+
+    console.log(MYAPP.person.name)
+
+    //정보은닉
+
+    let Counter = (function(){
+      let num = 0;
+      //프라이빗 멤버
+      
+      return{
+        increase(){
+          return ++num;
+        },
+        decrease(){
+          return --num;
+        }
+      }
+    }())
+
+    console.log(Counter.num) 
+    //프라이베이트 변수는 외부로 노출되지 않음
+    console.log(Counter.increase())
+    console.log(Counter.increase())
+    console.log(Counter.increase())
+    console.log(Counter.decrease())
+  </script>
+</body>
+</html>

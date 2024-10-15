@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     body{
+        text-align: center;
+        padding: 2rem;
+      }
+
+      #heading{
+        background-color: sandybrown;
+      }
+  </style>
+</head>
+<body>
+  <h1 id="heading">애니메이션 API</h1>
+
+  <script>
+    const heading = document.querySelector('#heading')
+    // const keyframes = {
+    //   opacity : [1, 1],
+    //   rotate : ['y 360deg', '0']
+    //  }
+
+    // const options = {
+    //   duration : 5000,
+    //   easing : 'ease',
+    //   iterations: Infinity,
+    // }
+
+    // heading.animate(keyframes, options)
+
+    const keyframes = {
+      borderRadius: [
+        '20% 50% 50% 70%/50% 50% 70% 50%',
+        '50% 20% 50% 50%/40% 40% 60% 60%',
+        '50% 40% 20% 40%/40% 50% 50% 80%',
+        '50% 50% 50% 20%/40% 40% 60% 60%'
+      ]
+    }
+
+    const options = {
+      duration : 8000,
+      direction : 'alternate',
+      iterations : Infinity
+    };
+
+
+
+    heading.animate(keyframes, options)
+  </script>
+</body>
+</html>
