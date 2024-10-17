@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커스텀 select</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    .selectBox{
+    width: 150px;
+    height:30px;
+    cursor: pointer;
+    margin: 0 auto;
+    position: relative;
+    background-color: salmon;
+    cursor: pointer;
+    transition: .2s ease-in;
+    margin-top: 20%;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 5, 88);
+  }
+
+  .selectBox::after{
+    content: '';
+    position: absolute;
+    width:0;
+    height:0;
+    border: 6px solid transparent;
+    border-top-color:white;
+    top:14px;
+    right:10px;
+  }
+
+  .selectBox.active::after{
+    content: '';
+    top:7px;
+    border: 6px solid transparent;
+    border-bottom-color:white;
+  }
+
+  .label{
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-size:18px;
+    padding-top: 5px;
+    padding-left:15px;
+    cursor: pointer;
+    transition: .2s ease-in;
+  }
+
+  .optionList{
+    width:100%;
+    background-color:salmon;
+    color:white;
+    line-height: 2;
+    text-align: center;
+    position: absolute;
+    top:100%;
+    list-style: none;
+    height:0;
+    overflow: hidden;
+    transition: .2s ease-in;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .optionList li:hover{
+   background-color: sandybrown;
+    color: white;
+  }
+
+  .optionList li{
+    border: 1px solid rgb(255, 5, 88);
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="selectBox">
+    <button class="label">Select Car:</button>
+    <ul class="optionList">
+      <li class="optionItem">Audi</li>
+      <li class="optionItem">BMW</li>
+      <li class="optionItem">Ford</li>
+      <li class="optionItem">Jaguar</li>
+      <li class="optionItem">Jaguar</li>
+      <li class="optionItem">Jaguar</li>
+      <li class="optionItem">Jaguar</li>
+      <li class="optionItem">Jaguar</li>
+      <li class="optionItem">Jaguar</li>
+      <li class="optionItem">Jaguar</li>
+      <li class="optionItem">Jaguar</li>
+    </ul>
+  </div>
+  <script>
+    let seletBox = document.querySelector('.selectBox')
+    let seletBtn = document.querySelector('.selectBox > button')
+    let optionLi = document.querySelector('.optionList')
+
+    seletBtn.addEventListener('click', ()=>{
+      let currentHight = window.getComputedStyle(optionLi).height;
+      console.log(currentHight)
+      if(currentHight === '0px'){
+        optionLi.style.height = '374px'
+        seletBox.classList.add('active')
+      } else {
+        optionLi.style.height = '0px'
+        seletBox.classList.remove('active')
+      }
+    })
+  </script>
+</body>
+
+</html>

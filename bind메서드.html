@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getthisbinding (){
+      return this;
+    }
+
+    const thisArg = {a:1}
+
+    console.log(getthisbinding.bind(thisArg));
+    
+    //bind메서드는 함수를 호출하지 않으므로 명시적으로 호출해야한다
+    console.log(getthisbinding.bind(thisArg)());
+    const person = {
+      name : 'lee',
+      foo(callback){
+        setTimeout(callback, 100);
+      }
+    }
+
+    person.foo(function(){
+      console.log(`Hi ${this.name}`)
+    })
+    
+    let user = {
+      name : 'john',
+    }
+
+    let username = bind(user
+    console.log(this)
+  </script>
+</body>
+</html>
